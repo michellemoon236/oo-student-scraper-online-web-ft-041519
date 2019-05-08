@@ -7,7 +7,7 @@ require_relative './student.rb'
 class Scraper
 
   def self.scrape_index_page(index_url)
-    The return value of this method should be an array of hashes in which each hash represents a single student. The keys of the individual student hashes should be :name, :location and :profile_url  
+    # The return value of this method should be an array of hashes in which each hash represents a single student. The keys of the individual student hashes should be :name, :location and :profile_url  
     doc = Nokogiri::HTML(open(index_url))
     
     students = []
