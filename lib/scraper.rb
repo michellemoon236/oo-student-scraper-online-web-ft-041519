@@ -15,9 +15,9 @@ class Scraper
     #binding.pry
     doc.css(".student-card").each do |student|
       student_hash = { 
-        :name => doc.css(".student-name").text, 
-        :location => doc.css(".student-location").text, 
-        :profile_url => doc.css("a").attribute("href").value 
+        :name => student.css(".student-name").text, 
+        :location => student.css(".student-location").text, 
+        :profile_url => student.css("a").attribute("href").value 
       }
       binding.pry
       students << student_hash
