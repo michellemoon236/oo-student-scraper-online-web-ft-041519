@@ -45,6 +45,7 @@ class Scraper
       else
         student_profile[:blog] = doc.css(".social-icon-container a").attribute("href").value 
       end
+    end
       
     student_profile
     # twitter = doc.css(".social-icon-container a").attribute("href").value if doc.css(".social-icon-container a").attribute("href").value.include?("twitter")
