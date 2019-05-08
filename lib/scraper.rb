@@ -30,7 +30,7 @@ class Scraper
      doc = Nokogiri::HTML(open(profile_url))   
     binding.pry 
       student_profile = {}
-      student_profile[:profile_quote] = doc.css(".profile-quote").text,
+      student_profile[:profile_quote] = doc.css(".profile-quote").text
       student_profile[:bio] = doc.css(".bio-content div.description-holder p").text
       
       #binding.pry
