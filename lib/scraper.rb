@@ -28,7 +28,7 @@ class Scraper
   def self.scrape_profile_page(profile_url)
     # The return value of this method should be a hash in which the key/value pairs describe an individual student. Some students don't have a twitter or some other social link. Be sure to be able to handle that. Here is what the hash should look like
      doc = Nokogiri::HTML(open(profile_url))   
-    #binding.pry 
+    binding.pry 
       student_profile = {}
       student_profile[:profile_quote] = doc.css(".profile-quote").text,
       student_profile[:bio] = doc.css(".bio-content div.description-holder p").text
