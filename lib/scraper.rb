@@ -31,11 +31,15 @@ class Scraper
     binding.pry 
     links = profile.css("div.social-icon-container a")
     
-    links.do each |e| 
+    links.do map |e| 
       if e.attribute("href").value.include?("twitter")
         student_profile[:twitter] = doc.css(".social-icon-container a").attribute("href").value
       elsif e.attribute("href").value.include?("linkedin")
         student_profile[:linkedin] = doc.css(".social-icon-container a").attribute("href").value
+      elsif e.attribute("href").value.include?("github")
+        student_profile[:github] = doc.css(".social-icon-container a").attribute("href").value
+      else
+        
     links.
     twitter = doc.css(".social-icon-container a").attribute("href").value if doc.css(".social-icon-container a").attribute("href").value.include?("twitter")
     
