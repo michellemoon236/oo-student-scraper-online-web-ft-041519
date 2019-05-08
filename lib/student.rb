@@ -5,7 +5,6 @@ class Student
   @@all = []
 
   def initialize(student_hash)
-    #binding.pry
     @name = student_hash[:name]
     @location = student_hash[:location]
     @twitter = student_hash[:twitter]
@@ -26,10 +25,8 @@ class Student
 
   def add_student_attributes(attributes_hash)
     attributes_hash.each do |attribute, value|
-      #binding.pry
       self.send(attribute.to_s + '=', value) 
     end
-    #binding.pry
     self
   end
 
