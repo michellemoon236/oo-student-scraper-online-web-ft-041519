@@ -37,7 +37,7 @@ class Scraper
       doc.css("div.social-icon-container a").map do |e| 
       #binding.pry
       if e.attribute("href").value.include?("twitter")
-        student_profile[:twitter] = doc.css(".social-icon-container a").attribute("href").value
+        student_profile[:twitter] = e.attribute("href").value
       elsif e.attribute("href").value.include?("linkedin")
         student_profile[:linkedin] = doc.css(".social-icon-container a").attribute("href").value
       elsif e.attribute("href").value.include?("github")
