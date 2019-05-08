@@ -38,13 +38,13 @@ class Scraper
         
     github = doc.css(".social-icon-container a").attribute("href").value if doc.css(".social-icon-container a").attribute("href").value.include?("github")
     
-    student_profile = {
-      :twitter => twitter,
-      :linkedin => linkedin,
-      :github => github,
+    student_profile = {}
+      student_profile[:twitter] = twitter,
+      student_profile[:linkedin] = linkedin,
+      student_profile[:github] = github,
       # :blog => blog
-      :profile_quote => doc.css(".profile-quote").text,
-      :bio => doc.css(".bio-content div.description-holder p").text
+      student_profile[:profile_quote] = doc.css(".profile-quote").text,
+      student_profile[:bio] = doc.css(".bio-content div.description-holder p").text
       }
   end
 
