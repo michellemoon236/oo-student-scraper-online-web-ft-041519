@@ -29,6 +29,7 @@ class Student
       #binding.pry
       self.send(attribute.to_s + '=', value) 
     end
+    binding.pry
     self
   end
 
