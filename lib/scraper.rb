@@ -29,7 +29,9 @@ class Scraper
     # The return value of this method should be a hash in which the key/value pairs describe an individual student. Some students don't have a twitter or some other social link. Be sure to be able to handle that. Here is what the hash should look like
      doc = Nokogiri::HTML(open(profile_url))   
     #binding.pry 
+    links = profile.css("div.social-icon-container a").map {|e| e.attribute("href").value}
     
+    links.
     twitter = doc.css(".social-icon-container a").attribute("href").value if doc.css(".social-icon-container a").attribute("href").value.include?("twitter")
     
     linkedin = doc.css(".social-icon-container a").attribute("href").value if doc.css(".social-icon-container a").attribute("href").value.include?("linkedin")
