@@ -30,13 +30,8 @@ class Scraper
      doc = Nokogiri::HTML(open(profile_url))   
     binding.pry 
       student_profile = {}
-      student_profile[:twitter] = twitter,
-      student_profile[:linkedin] = linkedin,
-      student_profile[:github] = github,
-      # :blog => blog
       student_profile[:profile_quote] = doc.css(".profile-quote").text,
       student_profile[:bio] = doc.css(".bio-content div.description-holder p").text
-      }
       
       links = profile.css("div.social-icon-container a")
     
@@ -51,12 +46,12 @@ class Scraper
         student_profile[:blog] = doc.css(".social-icon-container a").attribute("href").value 
       end
       
-    links.
-    twitter = doc.css(".social-icon-container a").attribute("href").value if doc.css(".social-icon-container a").attribute("href").value.include?("twitter")
+
+    # twitter = doc.css(".social-icon-container a").attribute("href").value if doc.css(".social-icon-container a").attribute("href").value.include?("twitter")
     
-    linkedin = doc.css(".social-icon-container a").attribute("href").value if doc.css(".social-icon-container a").attribute("href").value.include?("linkedin")
+    # linkedin = doc.css(".social-icon-container a").attribute("href").value if doc.css(".social-icon-container a").attribute("href").value.include?("linkedin")
         
-    github = doc.css(".social-icon-container a").attribute("href").value if doc.css(".social-icon-container a").attribute("href").value.include?("github")
+    # github = doc.css(".social-icon-container a").attribute("href").value if doc.css(".social-icon-container a").attribute("href").value.include?("github")
     
 
   end
