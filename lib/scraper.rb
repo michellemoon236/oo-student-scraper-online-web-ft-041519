@@ -33,7 +33,8 @@ class Scraper
     
     links.do each |e| 
       if e.attribute("href").value.include?("twitter")
-          doc.css(".social-icon-container a").attribute("href").value
+         student_profile[:twitter] =doc.css(".social-icon-container a").attribute("href").value
+      elsif
     links.
     twitter = doc.css(".social-icon-container a").attribute("href").value if doc.css(".social-icon-container a").attribute("href").value.include?("twitter")
     
