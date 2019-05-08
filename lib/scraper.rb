@@ -34,6 +34,7 @@ class Scraper
       student_profile[:bio] = doc.css(".bio-content div.description-holder p").text
       
       doc.css("div.social-icon-container a").do map |e| 
+      binding.pry
       if e.attribute("href").value.include?("twitter")
         student_profile[:twitter] = doc.css(".social-icon-container a").attribute("href").value
       elsif e.attribute("href").value.include?("linkedin")
