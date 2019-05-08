@@ -26,6 +26,7 @@ class Student
 
   def add_student_attributes(attributes_hash)
     attributes_hash.each do |attribute, value|
+      binding.pry
       self[attribute.to_sym] = value
     end
     self
