@@ -41,7 +41,7 @@ class Scraper
       elsif e.attribute("href").value.include?("linkedin")
         student_profile[:linkedin] = e.attribute("href").value
       elsif e.attribute("href").value.include?("github")
-        student_profile[:github] = doc.css(".social-icon-container a").attribute("href").value
+        student_profile[:github] = e.attribute("href").value
       else
         student_profile[:blog] = doc.css(".social-icon-container a").attribute("href").value 
       end
