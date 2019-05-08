@@ -33,7 +33,7 @@ class Scraper
       student_profile[:profile_quote] = doc.css(".profile-quote").text,
       student_profile[:bio] = doc.css(".bio-content div.description-holder p").text
       
-      links = profile.css("div.social-icon-container a")
+      links = doc.css("div.social-icon-container a")
     
     links.do map |e| 
       if e.attribute("href").value.include?("twitter")
