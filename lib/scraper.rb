@@ -12,7 +12,7 @@ class Scraper
     
     students = []
     
-    binding.pry
+    #binding.pry
     doc.css(".student-card").each do |student|
       student_hash = { 
         :name => doc.css(".student-name").text, 
