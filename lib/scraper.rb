@@ -32,7 +32,7 @@ class Scraper
     links = profile.css("div.social-icon-container a")
     
     links.do each |e| 
-      e.attribute("href").value
+      if e.attribute("href").value.include?("twitter")
     
     links.
     twitter = doc.css(".social-icon-container a").attribute("href").value if doc.css(".social-icon-container a").attribute("href").value.include?("twitter")
