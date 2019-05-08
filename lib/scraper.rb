@@ -29,7 +29,16 @@ class Scraper
     # The return value of this method should be a hash in which the key/value pairs describe an individual student. Some students don't have a twitter or some other social link. Be sure to be able to handle that. Here is what the hash should look like
      doc = Nokogiri::HTML(open(profile_url))   
     binding.pry 
-    links = profile.css("div.social-icon-container a")
+      student_profile = {}
+      student_profile[:twitter] = twitter,
+      student_profile[:linkedin] = linkedin,
+      student_profile[:github] = github,
+      # :blog => blog
+      student_profile[:profile_quote] = doc.css(".profile-quote").text,
+      student_profile[:bio] = doc.css(".bio-content div.description-holder p").text
+      }
+      
+      links = profile.css("div.social-icon-container a")
     
     links.do map |e| 
       if e.attribute("href").value.include?("twitter")
@@ -39,7 +48,9 @@ class Scraper
       elsif e.attribute("href").value.include?("github")
         student_profile[:github] = doc.css(".social-icon-container a").attribute("href").value
       else
-        
+        student_profile[:blog] = doc.css(".social-icon-container a").attribute("href").value 
+      end
+      
     links.
     twitter = doc.css(".social-icon-container a").attribute("href").value if doc.css(".social-icon-container a").attribute("href").value.include?("twitter")
     
@@ -47,14 +58,7 @@ class Scraper
         
     github = doc.css(".social-icon-container a").attribute("href").value if doc.css(".social-icon-container a").attribute("href").value.include?("github")
     
-    student_profile = {}
-      student_profile[:twitter] = twitter,
-      student_profile[:linkedin] = linkedin,
-      student_profile[:github] = github,
-      # :blog => blog
-      student_profile[:profile_quote] = doc.css(".profile-quote").text,
-      student_profile[:bio] = doc.css(".bio-content div.description-holder p").text
-      }
+
   end
 
 end
